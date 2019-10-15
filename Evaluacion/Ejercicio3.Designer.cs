@@ -37,6 +37,7 @@
             this.Instruction = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbQuizCounter = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,12 +136,23 @@
             this.textBox1.Size = new System.Drawing.Size(100, 31);
             this.textBox1.TabIndex = 12;
             // 
+            // lbQuizCounter
+            // 
+            this.lbQuizCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuizCounter.Location = new System.Drawing.Point(25, 115);
+            this.lbQuizCounter.Name = "lbQuizCounter";
+            this.lbQuizCounter.Size = new System.Drawing.Size(95, 75);
+            this.lbQuizCounter.TabIndex = 13;
+            this.lbQuizCounter.Text = "Ejercicio # de";
+            this.lbQuizCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(836, 380);
+            this.Controls.Add(this.lbQuizCounter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Instruction);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label Instruction;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbQuizCounter;
         }
 }

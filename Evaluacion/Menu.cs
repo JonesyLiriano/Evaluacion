@@ -58,5 +58,13 @@ namespace Evaluacion
             e4.MdiParent = this.MdiParent;
             e4.Show();
             }
+
+        private void GeneradorEjercicios_Click(object sender, EventArgs e)
+            {
+            GeneradorEjercicio ge = new GeneradorEjercicio();
+            ge.MdiParent = this.MdiParent;
+            ge.Show();
+            }
+        
         }
 }

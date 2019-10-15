@@ -34,6 +34,7 @@
             this.Ejercicio3 = new System.Windows.Forms.ToolStripLabel();
             this.Ejercicio4 = new System.Windows.Forms.ToolStripLabel();
             this.Salir = new System.Windows.Forms.ToolStripLabel();
+            this.GeneradorEjercicios = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,15 +46,17 @@
             this.Ejercicio2,
             this.Ejercicio3,
             this.Ejercicio4,
+            this.GeneradorEjercicios,
             this.Salir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(540, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(745, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // Ejercicio1
             // 
+            this.Ejercicio1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Ejercicio1.Name = "Ejercicio1";
             this.Ejercicio1.Size = new System.Drawing.Size(97, 22);
             this.Ejercicio1.Text = "Ejercicio #1";
@@ -87,13 +90,20 @@
             this.Salir.Text = "Salir";
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // GeneradorEjercicios
+            // 
+            this.GeneradorEjercicios.Name = "GeneradorEjercicios";
+            this.GeneradorEjercicios.Size = new System.Drawing.Size(166, 22);
+            this.GeneradorEjercicios.Text = "Generador Ejercicios";
+            this.GeneradorEjercicios.Click += new System.EventHandler(this.GeneradorEjercicios_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Evaluacion.Properties.Resources.sea_edge_79ab30e2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(540, 369);
+            this.ClientSize = new System.Drawing.Size(745, 369);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
@@ -116,6 +126,7 @@
         private System.Windows.Forms.ToolStripLabel Ejercicio3;
         private System.Windows.Forms.ToolStripLabel Salir;
         private System.Windows.Forms.ToolStripLabel Ejercicio4;
-    }
+        private System.Windows.Forms.ToolStripLabel GeneradorEjercicios;
+        }
 }
 

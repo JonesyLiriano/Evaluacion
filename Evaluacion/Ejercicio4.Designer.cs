@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.option6 = new System.Windows.Forms.Button();
+            this.option5 = new System.Windows.Forms.Button();
             this.option4 = new System.Windows.Forms.Button();
             this.option3 = new System.Windows.Forms.Button();
             this.option2 = new System.Windows.Forms.Button();
@@ -36,8 +38,7 @@
             this.Instruction = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.problem = new System.Windows.Forms.Label();
-            this.option6 = new System.Windows.Forms.Button();
-            this.option5 = new System.Windows.Forms.Button();
+            this.lbQuizCounter = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,28 @@
             this.groupBox2.Size = new System.Drawing.Size(583, 209);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
+            // 
+            // option6
+            // 
+            this.option6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.option6.Location = new System.Drawing.Point(420, 124);
+            this.option6.Name = "option6";
+            this.option6.Size = new System.Drawing.Size(125, 63);
+            this.option6.TabIndex = 5;
+            this.option6.Text = "option6";
+            this.option6.UseVisualStyleBackColor = true;
+            this.option6.Click += new System.EventHandler(this.option6_Click);
+            // 
+            // option5
+            // 
+            this.option5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.option5.Location = new System.Drawing.Point(420, 30);
+            this.option5.Name = "option5";
+            this.option5.Size = new System.Drawing.Size(125, 63);
+            this.option5.TabIndex = 4;
+            this.option5.Text = "option5";
+            this.option5.UseVisualStyleBackColor = true;
+            this.option5.Click += new System.EventHandler(this.option5_Click);
             // 
             // option4
             // 
@@ -130,33 +153,22 @@
             this.problem.TabIndex = 7;
             this.problem.Text = "Problem";
             // 
-            // option6
+            // lbQuizCounter
             // 
-            this.option6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.option6.Location = new System.Drawing.Point(420, 124);
-            this.option6.Name = "option6";
-            this.option6.Size = new System.Drawing.Size(125, 63);
-            this.option6.TabIndex = 5;
-            this.option6.Text = "option6";
-            this.option6.UseVisualStyleBackColor = true;
-            this.option6.Click += new System.EventHandler(this.option6_Click);
-            // 
-            // option5
-            // 
-            this.option5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.option5.Location = new System.Drawing.Point(420, 30);
-            this.option5.Name = "option5";
-            this.option5.Size = new System.Drawing.Size(125, 63);
-            this.option5.TabIndex = 4;
-            this.option5.Text = "option5";
-            this.option5.UseVisualStyleBackColor = true;
-            this.option5.Click += new System.EventHandler(this.option5_Click);
+            this.lbQuizCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuizCounter.Location = new System.Drawing.Point(12, 129);
+            this.lbQuizCounter.Name = "lbQuizCounter";
+            this.lbQuizCounter.Size = new System.Drawing.Size(177, 33);
+            this.lbQuizCounter.TabIndex = 16;
+            this.lbQuizCounter.Text = "Ejercicio # de";
+            this.lbQuizCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Ejercicio4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 381);
+            this.Controls.Add(this.lbQuizCounter);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Instruction);
             this.Controls.Add(this.groupBox1);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Label Instruction;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label problem;
+        private System.Windows.Forms.Label lbQuizCounter;
         }
 }

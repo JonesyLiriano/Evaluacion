@@ -73,6 +73,12 @@
     <Compile Include="Ejercicio4.Designer.cs">
       <DependentUpon>Ejercicio4.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneradorEjercicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneradorEjercicio.Designer.cs">
+      <DependentUpon>GeneradorEjercicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicio4.resx">
       <DependentUpon>Ejercicio4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneradorEjercicio.resx">
+      <DependentUpon>GeneradorEjercicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -128,6 +137,9 @@
     <None Include="Resources\sea-edge-79ab30e2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Ejercicios2\" />
+    <Folder Include="Ejercicios3\" />
+    <Folder Include="Ejercicios4\" />
     <Folder Include="ResultadoEjercicio1\" />
     <Folder Include="ResultadoEjercicio2\" />
     <Folder Include="ResultadoEjercicio3\" />

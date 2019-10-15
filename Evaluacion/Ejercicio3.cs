@@ -14,45 +14,78 @@ using Newtonsoft.Json;
 namespace Evaluacion
 {
     public partial class Ejercicio3 : Form
-    {
-        Ejercicio3Model loadJson;
-        public Ejercicio3()
         {
+        int counterJsonFiles;
+        Ejercicio3Model resultJson;
+        Ejercicio3Model jsonFile;
+        string[] jsonFiles;
+        public Ejercicio3()
+            {
             InitializeComponent();
-        }
+            }
 
         private void Ejercicio3_Load(object sender, EventArgs e)
             {
-            LoadValuesFromJson();
+            GetJsonFiles();
+            counterJsonFiles = 0;
             }
-        private void LoadValuesFromJson()
+        private void GetJsonFiles()
             {
-            loadJson = new Ejercicio3Model()
+            jsonFiles = Directory.GetFiles("../../Ejercicios3/");
+            if (jsonFiles.Length > 0)
                 {
-                instruction = "Completa correctamente la oracion arrastrando al espacio en blanco la cantidad que corresponda.",
-                problem = "Aumentar en un 35% la cantidad de 4,720, resulta en:",
-                options = new List<string>() { "6,372", "6.370", "130", "135" },
+                LoadValuesFromJson(jsonFiles[0]);
+                }
+            }
+        private void LoadValuesFromJson(string json)
+            {
+            lbQuizCounter.Text = string.Format("Ejercicio #{0} de {1}", counterJsonFiles + 1, jsonFiles.Length);
+            jsonFile = new Ejercicio3Model();
+            jsonFile = JsonConvert.DeserializeObject<Ejercicio3Model>(File.ReadAllText(json));
+            resultJson = new Ejercicio3Model()
+                {
+                instruction = jsonFile.instruction,
+                problem = jsonFile.problem,
+                options = jsonFile.options,
                 result = "0"
                 };
-            Instruction.Text = loadJson.instruction;
-            problem.Text = loadJson.problem;            
-            option1.Text = loadJson.options.ToArray()[0];
-            option2.Text = loadJson.options.ToArray()[1];
-            option3.Text = loadJson.options.ToArray()[2];
-            option4.Text = loadJson.options.ToArray()[3];
+            Instruction.Text = resultJson.instruction;
+            problem.Text = resultJson.problem;
+            option1.Text = resultJson.options.ToArray()[0];
+            option2.Text = resultJson.options.ToArray()[1];
+            option3.Text = resultJson.options.ToArray()[2];
+            option4.Text = resultJson.options.ToArray()[3];
 
             }
         private void GenerateJsonResult(string result)
             {
-            loadJson.result = result;
-            string serializeJson = JsonConvert.SerializeObject(loadJson);
-            using (var fileJson = new StreamWriter(
-                "../../ResultadoEjercicio3/EjercicioPorcentaje.json", false))
                 {
-                fileJson.WriteLine(serializeJson.ToString());
-                fileJson.Close();
+                if (jsonFiles.Length > 1 && jsonFiles.Length > counterJsonFiles)
+                    {
+                    resultJson.result = result;
+                    string serializeJson = JsonConvert.SerializeObject(resultJson);
+                    using (var fileJson = new StreamWriter(string.Format("../../ResultadoEjercicio3/EjercicioPorcentaje{0}.json", counterJsonFiles), false))
+                        {
+                        fileJson.WriteLine(serializeJson.ToString());
+                        fileJson.Close();
+                        }
+                    if (resultJson.result == jsonFile.result)
+                        {
+                        MessageBox.Show("Felicidades!, Ha elegido la respuesta correcta.");
+                        }
+                    else
+                        {
+                        MessageBox.Show(string.Format("Lo siento, No ha elegido una respuesta valida. Respuesta Correcta: {0}", jsonFile.result));
+                        }
+                    counterJsonFiles++;
+                    ChangeCounter();
+                    }
+                else
+                    {
+                    MessageBox.Show("No hay ejercicios para mostrar");
+                    }
+
                 }
-            MessageBox.Show("Opcion elegida, Json ha sido generado.");
             }
 
         private void option1_Click(object sender, EventArgs e)
@@ -74,7 +107,11 @@ namespace Evaluacion
             {
             GenerateJsonResult(option4.Text);
             }
+        private void ChangeCounter()
+            {
+            if (jsonFiles.Length > 1 && jsonFiles.Length > counterJsonFiles)
+                LoadValuesFromJson(jsonFiles[counterJsonFiles]);
+            }
+
         }
-
-
-}
+    }

@@ -38,6 +38,7 @@
             this.option3 = new System.Windows.Forms.Button();
             this.option2 = new System.Windows.Forms.Button();
             this.option1 = new System.Windows.Forms.Button();
+            this.lbQuizCounter = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,12 +147,23 @@
             this.option1.UseVisualStyleBackColor = true;
             this.option1.Click += new System.EventHandler(this.option1_Click);
             // 
+            // lbQuizCounter
+            // 
+            this.lbQuizCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuizCounter.Location = new System.Drawing.Point(27, 72);
+            this.lbQuizCounter.Name = "lbQuizCounter";
+            this.lbQuizCounter.Size = new System.Drawing.Size(95, 75);
+            this.lbQuizCounter.TabIndex = 6;
+            this.lbQuizCounter.Text = "Ejercicio # de";
+            this.lbQuizCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Ejercicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(487, 397);
+            this.Controls.Add(this.lbQuizCounter);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.number2);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Button option3;
         private System.Windows.Forms.Button option2;
         private System.Windows.Forms.Button option1;
+        private System.Windows.Forms.Label lbQuizCounter;
         }
 }
