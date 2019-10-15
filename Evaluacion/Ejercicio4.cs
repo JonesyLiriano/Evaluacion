@@ -66,7 +66,7 @@ namespace Evaluacion
         private void GenerateJsonResult(string result)
             {
                 {
-                if (jsonFiles.Length > 1 && jsonFiles.Length > counterJsonFiles)
+                if (jsonFiles.Length >= 1 && jsonFiles.Length > counterJsonFiles)
                     {
                     resultJson.result = result;
                     string serializeJson = JsonConvert.SerializeObject(resultJson);
@@ -135,7 +135,7 @@ namespace Evaluacion
             }
         private void ChangeCounter()
             {
-            if (jsonFiles.Length > 1 && jsonFiles.Length > counterJsonFiles)
+            if (jsonFiles.Length >= 1 && jsonFiles.Length > counterJsonFiles)
                 LoadValuesFromJson(jsonFiles[counterJsonFiles]);
             }
         }
